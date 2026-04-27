@@ -974,7 +974,7 @@ async function loadTopicContent(topicId){
     if(error||!data)return;
     data.forEach(row=>{
       const d=typeof row.data==='string'?JSON.parse(row.data):row.data;
-      if(row.mode==='rules')  RULES[topicId]      =d;
+      if(row.mode==='rules')  RULES[topicId]      ={cards:d};
       if(row.mode==='cumle')  CUMLE_DATA[topicId] =d;
       if(row.mode==='bosluk') BOSLUK_DATA[topicId]=d;
       if(row.mode==='eslestir')ESLESTIR_DATA[topicId]=d;
